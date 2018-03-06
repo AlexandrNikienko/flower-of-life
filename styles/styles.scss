@@ -1,12 +1,18 @@
-$size: 100vh;
+$size: 80vh;
 
 $d: $size*0.25;
 $r: $d/2;
+
+html,
+body {
+    height: 100%;
+}
 
 body {
     background: url('http://moonkoradji.com/images/swamp.jpg') center/cover no-repeat fixed;
     margin: 0;
     overflow: hidden;
+    display: flex;
 }
 
 video {
@@ -20,6 +26,7 @@ video {
 
 .main-container {
     width: $size;
+    max-width: 100%;
     height: $size;
     margin: auto;
     position: relative;
@@ -36,6 +43,7 @@ video {
     border: 1px solid silver;
     border-radius: 100%;
     box-shadow: 0 0 9px darkgray;
+    background-color: rgba(silver, .025);
 }
 
 .connection {
