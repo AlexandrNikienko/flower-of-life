@@ -1,0 +1,206 @@
+$size: 100vh;
+
+$d: $size*0.25;
+$r: $d/2;
+
+body {
+    background: url('http://moonkoradji.com/images/swamp.jpg') center/cover no-repeat fixed;
+    margin: 0;
+    overflow: hidden;
+}
+
+video {
+    position: fixed;
+    z-index: -1;
+    opacity: .65;
+    min-width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.main-container {
+    width: $size;
+    height: $size;
+    margin: auto;
+    position: relative;
+    //border-radius: 100%;
+    //overflow: hidden;
+    //background-color: white;
+    transform: rotate(30deg);
+}
+
+.ring {
+    width: $d;
+    height: $d;
+    box-sizing: border-box;
+    border: 1px solid silver;
+    border-radius: 100%;
+    box-shadow: 0 0 9px darkgray;
+}
+
+.connection {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &:nth-child(1) {
+        transform: translateX(-50%) rotate(90deg);
+    }
+
+    &:nth-child(2) {
+        transform: translateX(-50%) rotate(30deg);
+    }
+
+    &:nth-child(3) {
+        transform: translateX(-50%) rotate(-30deg);
+    }
+}
+
+.seed {
+    width: $d*2;
+    height: $d*2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 6;
+}
+
+.level {
+    &--2 {
+        .ring {
+            border-color: gold;
+        }
+
+        .seed {
+            z-index: 5;
+
+            &:nth-of-type(1) {
+                margin-top: -$r*0.866025403784439;
+                margin-left: $r*0.5;
+            }
+
+            &:nth-of-type(2) {
+                margin-left: $r;
+            }
+
+            &:nth-of-type(3) {
+                margin-top: $r*0.866025403784439;
+                margin-left: $r*0.5;
+            }
+
+            &:nth-of-type(4) {
+                margin-top: $r*0.866025403784439;
+                margin-left: -$r*0.5;
+            }
+
+            &:nth-of-type(5) {
+                margin-left: -$r;
+            }
+
+            &:nth-of-type(6) {
+                margin-top: -$r*0.866025403784439;
+                margin-left: -$r*0.5;
+            }
+        }
+    }
+
+    &--3 {
+        .ring {
+            border-color: darkgoldenrod;
+        }
+
+        .seed {
+            z-index: 4;
+            &:nth-of-type(1) {
+                margin-top: -$r*2*0.866025403784439;
+                margin-left: $r;
+            }
+            &:nth-of-type(2) {
+                margin-top: -$r*2*0.433012701892219;
+                margin-left: $r*2*0.75;
+            }
+            &:nth-of-type(3) {
+                margin-left: $r*2;
+            }
+            &:nth-of-type(4) {
+                margin-top: $r*2*0.433012701892219;
+                margin-left: $r*2*0.75;
+            }
+            &:nth-of-type(5) {
+                margin-top: $r*2*0.866025403784439;
+                margin-left: $r;
+            }
+            &:nth-of-type(6) {
+                margin-top: $r*2*0.866025403784439;
+            }
+            &:nth-of-type(7) {
+                margin-top: $r*2*0.866025403784439;
+                margin-left: -$r;
+            }
+            &:nth-of-type(8) {
+                margin-top: $r*2*0.433012701892219;
+                margin-left: -$r*2*0.75;
+            }
+            &:nth-of-type(9) {
+                margin-left: -$r*2;
+            }
+            &:nth-of-type(10) {
+                margin-top: -$r*2*0.433012701892219;
+                margin-left: -$r*2*0.75;
+            }
+            &:nth-of-type(11) {
+                margin-top: -$r*2*0.866025403784439;
+                margin-left: -$r;
+            }
+            &:nth-of-type(12) {
+                margin-top: -$r*2*0.866025403784439;
+            }
+        }
+    }
+}
+
+
+
+//////////////////////////////////
+
+$angel: 60deg;
+$angel2: 90deg;
+
+.five-rings {
+    //display: none;
+    width: $d;
+    position: absolute;
+    left: 50%;
+    margin-left: -$r;
+
+    &:nth-of-type(2) {
+        transform: rotate($angel);
+    }
+
+    &:nth-of-type(3) {
+        transform: rotate($angel*2);
+    }
+}
+
+.four-rings {
+    width: $d;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -$r;
+    margin-top: -$r*4;
+
+    &:nth-of-type(2) {
+        transform: rotate($angel2);
+    }
+
+    &:nth-of-type(3) {
+        transform: rotate($angel2*2);
+    }
+}
+
+
+
